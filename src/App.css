@@ -1,0 +1,3 @@
+/* App.css - Reset Vite defaults that conflict with our layout */
+/* The default Vite template had max-width, padding, and text-align: center on #root
+   which caused global misalignment. All layout is handled by index.css and Tailwind. */
