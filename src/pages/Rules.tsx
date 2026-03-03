@@ -82,8 +82,8 @@ const Rules = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-40 md:pt-44 pb-24">
-        <ParticleBackground />
+    <div className="min-h-screen pt-10 md:pt-12 pb-24">
+      <ParticleBackground />
       {/* Hero Section */}
       <section className="relative px-4 mb-20">
         <div className="max-w-6xl mx-auto">

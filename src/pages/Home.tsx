@@ -72,7 +72,7 @@ const Home = () => {
       <ParticleBackground />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center pt-40 md:pt-44 pb-12 px-28">
+      <section className="relative min-h-screen flex items-center justify-center pt-10 md:pt-12 pb-12 px-4 sm:px-8 md:px-12 lg:px-28">
         {/* Floating Elements - Hidden on mobile to prevent overflow */}
         <motion.div
           className="hidden md:block absolute top-32 left-10 text-4xl lg:text-6xl"
@@ -182,7 +182,7 @@ const Home = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
-            className="text-lg sm:text-2xl md:text-3xl text-gray-300 mb-48 sm:mb-6 font-light "
+            className="text-lg sm:text-2xl md:text-3xl text-gray-300 mb-8 sm:mb-6 font-light "
           >
             <span className="text-orange-400">Think Smart.</span>{" "}
             <span className="text-yellow-400">Code Strong.</span>{" "}
@@ -193,7 +193,7 @@ const Home = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.7 }}
-            className="text-gray-400 text-sm sm:text-base md:text-lg mb-48 sm:mb-8  mx-auto p-8 m-3"
+            className="text-gray-400 text-sm sm:text-base md:text-lg mb-8 sm:mb-8  mx-auto p-8 m-3"
           >
             A Coding Utsav where survival meets programming! Face "The Prop",
             hunt QR codes for immunity, and prove your coding supremacy.
