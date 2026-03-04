@@ -1,16 +1,23 @@
-import { motion } from 'framer-motion';
-import { QrCode, Shield, Clock, MapPin, AlertTriangle } from 'lucide-react';
-import Footer from '../components/Footer';
-import ParticleBackground from '../components/ParticleBackground';
+import { motion } from "framer-motion";
+import { QrCode, Shield, Clock, MapPin, AlertTriangle } from "lucide-react";
+import ParticleBackground from "../components/ParticleBackground";
 
 const QRHunt = () => {
   const qrLocations = [
-    { area: "Library Building", hint: "Near the knowledge hub", difficulty: "Easy" },
-    { area: "Cafeteria", hint: "Where hunger meets code", difficulty: "Medium" },
+    {
+      area: "Library Building",
+      hint: "Near the knowledge hub",
+      difficulty: "Easy",
+    },
+    {
+      area: "Cafeteria",
+      hint: "Where hunger meets code",
+      difficulty: "Medium",
+    },
     { area: "Main Building", hint: "Administrative zone", difficulty: "Hard" },
     { area: "Sports Complex", hint: "Athletes' corner", difficulty: "Medium" },
     { area: "Workshop Area", hint: "Where machines hum", difficulty: "Hard" },
-    { area: "???", hint: "Secret location!", difficulty: "Legendary" }
+    { area: "???", hint: "Secret location!", difficulty: "Legendary" },
   ];
 
   return (
@@ -28,7 +35,7 @@ const QRHunt = () => {
               className="inline-block text-6xl mb-4"
               animate={{
                 scale: [1, 1.2, 1],
-                rotate: [0, 10, -10, 0]
+                rotate: [0, 10, -10, 0],
               }}
               transition={{ duration: 2, repeat: Infinity }}
             >
@@ -38,7 +45,8 @@ const QRHunt = () => {
               QR Code <span className="text-green-400">Hunt</span>
             </h1>
             <p className="text-gray-400 text-xl max-w-3xl mx-auto">
-              Scan to survive! Hidden QR codes across campus grant immunity from "The Prop"
+              Scan to survive! Hidden QR codes across campus grant immunity from
+              "The Prop"
             </p>
           </motion.div>
         </div>
@@ -61,21 +69,23 @@ const QRHunt = () => {
               {
                 icon: <QrCode className="w-8 h-8" />,
                 title: "Find QR Codes",
-                description: "Multiple QR codes are hidden across the IKGPTU campus",
-                color: "from-blue-500 to-cyan-500"
+                description:
+                  "Multiple QR codes are hidden across the IKGPTU campus",
+                color: "from-blue-500 to-cyan-500",
               },
               {
                 icon: <Clock className="w-8 h-8" />,
                 title: "Random Activation",
                 description: "QR codes activate randomly during the event",
-                color: "from-orange-500 to-yellow-500"
+                color: "from-orange-500 to-yellow-500",
               },
               {
                 icon: <Shield className="w-8 h-8" />,
                 title: "Gain Immunity",
-                description: "Scanning an ACTIVE QR = 10 minutes elimination immunity!",
-                color: "from-green-500 to-emerald-500"
-              }
+                description:
+                  "Scanning an ACTIVE QR = 10 minutes elimination immunity!",
+                color: "from-green-500 to-emerald-500",
+              },
             ].map((step, index) => (
               <motion.div
                 key={index}
@@ -85,12 +95,18 @@ const QRHunt = () => {
                 transition={{ delay: index * 0.1 }}
                 className="relative group"
               >
-                <div className={`absolute -inset-1 bg-linear-to-r ${step.color} rounded-2xl opacity-30 group-hover:opacity-50 blur transition-opacity`} />
+                <div
+                  className={`absolute -inset-1 bg-linear-to-r ${step.color} rounded-2xl opacity-30 group-hover:opacity-50 blur transition-opacity`}
+                />
                 <div className="relative bg-accent rounded-2xl p-6 border border-white/10 text-center h-full">
-                  <div className={`w-16 h-16 mx-auto mb-4 rounded-xl bg-linear-to-r ${step.color} flex items-center justify-center text-white`}>
+                  <div
+                    className={`w-16 h-16 mx-auto mb-4 rounded-xl bg-linear-to-r ${step.color} flex items-center justify-center text-white`}
+                  >
                     {step.icon}
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-2">{step.title}</h3>
+                  <h3 className="text-xl font-bold text-white mb-2">
+                    {step.title}
+                  </h3>
                   <p className="text-gray-400">{step.description}</p>
                 </div>
               </motion.div>
@@ -107,7 +123,9 @@ const QRHunt = () => {
             <div className="relative">
               <div className="absolute -inset-4 bg-linear-to-r from-green-500/20 to-cyan-500/20 rounded-3xl blur-xl" />
               <div className="relative bg-accent rounded-3xl p-8 border border-green-500/20 text-center">
-                <p className="text-gray-400 mb-4">Sample QR Code (for demonstration)</p>
+                <p className="text-gray-400 mb-4">
+                  Sample QR Code (for demonstration)
+                </p>
                 <div className="w-48 h-48 mx-auto bg-white rounded-2xl p-4 mb-4">
                   <div className="w-full h-full bg-linear-to-br from-gray-800 to-gray-900 rounded-lg flex items-center justify-center">
                     <QrCode className="w-24 h-24 text-white" />
@@ -134,7 +152,8 @@ const QRHunt = () => {
             Possible <span className="text-orange-400">Locations</span>
           </motion.h2>
           <p className="text-gray-400 text-center mb-12">
-            Hints for where QR codes might be hiding (actual locations are secret!)
+            Hints for where QR codes might be hiding (actual locations are
+            secret!)
           </p>
 
           <div className="grid sm:grid-cols-2 gap-4">
@@ -154,11 +173,17 @@ const QRHunt = () => {
                   <div className="flex-1">
                     <div className="flex items-center justify-between mb-1">
                       <h3 className="font-bold text-white">{location.area}</h3>
-                      <span className={`text-xs px-2 py-1 rounded-full ${location.difficulty === 'Easy' ? 'bg-green-500/20 text-green-400' :
-                        location.difficulty === 'Medium' ? 'bg-yellow-500/20 text-yellow-400' :
-                          location.difficulty === 'Hard' ? 'bg-orange-500/20 text-orange-400' :
-                            'bg-purple-500/20 text-purple-400'
-                        }`}>
+                      <span
+                        className={`text-xs px-2 py-1 rounded-full ${
+                          location.difficulty === "Easy"
+                            ? "bg-green-500/20 text-green-400"
+                            : location.difficulty === "Medium"
+                              ? "bg-yellow-500/20 text-yellow-400"
+                              : location.difficulty === "Hard"
+                                ? "bg-orange-500/20 text-orange-400"
+                                : "bg-purple-500/20 text-purple-400"
+                        }`}
+                      >
                         {location.difficulty}
                       </span>
                     </div>
@@ -185,10 +210,16 @@ const QRHunt = () => {
               <div className="flex items-start gap-4">
                 <AlertTriangle className="w-8 h-8 text-red-400 shrink-0" />
                 <div>
-                  <h3 className="text-red-400 font-bold text-lg mb-2">⚠️ Warning</h3>
+                  <h3 className="text-red-400 font-bold text-lg mb-2">
+                    ⚠️ Warning
+                  </h3>
                   <p className="text-gray-300">
-                    <strong className="text-white">Any tampering with QR codes will lead to immediate disqualification!</strong>
-                    <br /><br />
+                    <strong className="text-white">
+                      Any tampering with QR codes will lead to immediate
+                      disqualification!
+                    </strong>
+                    <br />
+                    <br />
                     This includes:
                   </p>
                   <ul className="mt-2 space-y-1 text-gray-300">
@@ -203,8 +234,6 @@ const QRHunt = () => {
           </motion.div>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 };

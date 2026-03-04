@@ -1,9 +1,14 @@
-import { motion } from 'framer-motion';
-import { useState, useRef } from 'react';
-import { ExternalLink, CheckCircle, Users, Trophy, Calendar } from 'lucide-react';
-import confetti from 'canvas-confetti';
-import Footer from '../components/Footer';
-import ParticleBackground from '../components/ParticleBackground';
+import { motion } from "framer-motion";
+import { useState, useRef } from "react";
+import {
+  ExternalLink,
+  CheckCircle,
+  Users,
+  Trophy,
+  Calendar,
+} from "lucide-react";
+import confetti from "canvas-confetti";
+import ParticleBackground from "../components/ParticleBackground";
 
 const Register = () => {
   const [showConfirmation, setShowConfirmation] = useState(false);
@@ -18,7 +23,7 @@ const Register = () => {
       particleCount: 100,
       spread: 70,
       origin: { y: 0.6 },
-      colors: ['#ff6b35', '#f7c435', '#00ff88']
+      colors: ["#ff6b35", "#f7c435", "#00ff88"],
     });
     setShowConfirmation(true);
   };
@@ -35,7 +40,7 @@ const Register = () => {
     const newY = Math.random() * maxY - maxY / 2;
 
     setNoButtonPosition({ x: newX, y: newY });
-    setNoClickCount(prev => prev + 1);
+    setNoClickCount((prev) => prev + 1);
 
     if (noClickCount > 5) {
       setShowFunMessage(true);
@@ -50,13 +55,16 @@ const Register = () => {
     "Persistence won't help here! 🤣",
     "Give up and register!",
     "This button has trust issues!",
-    "Almost got it... NOT! 😜"
+    "Almost got it... NOT! 😜",
   ];
 
   const benefits = [
     { icon: <Trophy className="w-6 h-6" />, text: "Win Certificates & Medals" },
     { icon: <Users className="w-6 h-6" />, text: "Network with Fellow Coders" },
-    { icon: <Calendar className="w-6 h-6" />, text: "Experience Unique Format" }
+    {
+      icon: <Calendar className="w-6 h-6" />,
+      text: "Experience Unique Format",
+    },
   ];
 
   return (
@@ -74,7 +82,7 @@ const Register = () => {
               className="inline-block text-6xl mb-4"
               animate={{
                 rotate: [0, 10, -10, 0],
-                scale: [1, 1.1, 1]
+                scale: [1, 1.1, 1],
               }}
               transition={{ duration: 2, repeat: Infinity }}
             >
@@ -84,7 +92,8 @@ const Register = () => {
               Ready to <span className="text-orange-400">Register?</span>
             </h1>
             <p className="text-gray-400 text-xl max-w-3xl mx-auto">
-              Take the first step towards glory! Join Logic Loot and prove your coding supremacy.
+              Take the first step towards glory! Join Logic Loot and prove your
+              coding supremacy.
             </p>
           </motion.div>
         </div>
@@ -107,11 +116,10 @@ const Register = () => {
                 <div className="text-center mb-12">
                   <span className="text-5xl mb-4 block">🤔</span>
                   <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                    Do you want to participate in <span className="text-orange-400">Logic Loot?</span>
+                    Do you want to participate in{" "}
+                    <span className="text-orange-400">Logic Loot?</span>
                   </h2>
-                  <p className="text-gray-400">
-                    Choose wisely... or try to 😉
-                  </p>
+                  <p className="text-gray-400">Choose wisely... or try to 😉</p>
                 </div>
 
                 {/* Fun Message */}
@@ -141,7 +149,7 @@ const Register = () => {
                     </span>
                     <motion.div
                       className="absolute inset-0 bg-linear-to-r from-emerald-500 to-green-500"
-                      initial={{ x: '100%' }}
+                      initial={{ x: "100%" }}
                       whileHover={{ x: 0 }}
                       transition={{ duration: 0.3 }}
                     />
@@ -154,7 +162,7 @@ const Register = () => {
                     onTouchStart={handleNoHover}
                     animate={{
                       x: noButtonPosition.x,
-                      y: noButtonPosition.y
+                      y: noButtonPosition.y,
                     }}
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
                     className="relative px-12 py-4 bg-linear-to-r from-red-500 to-pink-500 rounded-full font-bold text-white text-xl shadow-2xl shadow-red-500/30"
@@ -206,7 +214,8 @@ const Register = () => {
                   Awesome Choice! 🎉
                 </h2>
                 <p className="text-gray-400 text-lg mb-8">
-                  Now complete your registration on Unstop to confirm your participation!
+                  Now complete your registration on Unstop to confirm your
+                  participation!
                 </p>
 
                 {/* Benefits */}
@@ -287,7 +296,9 @@ const Register = () => {
             viewport={{ once: true }}
             className="bg-linear-to-r from-orange-500/10 to-yellow-500/10 rounded-3xl p-8 border border-orange-500/20"
           >
-            <h3 className="text-2xl font-bold text-white mb-6 text-center">Event Details</h3>
+            <h3 className="text-2xl font-bold text-white mb-6 text-center">
+              Event Details
+            </h3>
             <div className="grid sm:grid-cols-3 gap-6 text-center">
               <div>
                 <span className="text-3xl mb-2 block">📅</span>
@@ -308,8 +319,6 @@ const Register = () => {
           </motion.div>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 };

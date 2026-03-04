@@ -1,9 +1,17 @@
-import { motion } from 'framer-motion';
-import { useRef, useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowRight, Trophy, Users, Clock, MapPin, Zap, Shield, Gift } from 'lucide-react';
-import ParticleBackground from '../components/ParticleBackground';
-import Footer from '../components/Footer';
+import { motion } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import {
+  ArrowRight,
+  Trophy,
+  Users,
+  Clock,
+  MapPin,
+  Zap,
+  Shield,
+  Gift,
+} from "lucide-react";
+import ParticleBackground from "../components/ParticleBackground";
 
 const Home = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -12,11 +20,11 @@ const Home = () => {
     days: 0,
     hours: 0,
     minutes: 0,
-    seconds: 0
+    seconds: 0,
   });
 
   useEffect(() => {
-    const eventDate = new Date('2026-03-09T10:00:00').getTime();
+    const eventDate = new Date("2026-03-09T10:00:00").getTime();
 
     const timer = setInterval(() => {
       const now = new Date().getTime();
@@ -24,9 +32,11 @@ const Home = () => {
 
       setTimeLeft({
         days: Math.floor(distance / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+        hours: Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+        ),
         minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
-        seconds: Math.floor((distance % (1000 * 60)) / 1000)
+        seconds: Math.floor((distance % (1000 * 60)) / 1000),
       });
     }, 1000);
 
@@ -37,34 +47,36 @@ const Home = () => {
     {
       icon: <Zap className="w-6 h-6 sm:w-8 sm:h-8" />,
       title: "The Prop",
-      description: "Face elimination every 15 mins! 1/6 chance in first half, 2/6 in second.",
-      color: "from-orange-500 to-red-500"
+      description:
+        "Face elimination every 15 mins! 1/6 chance in first half, 2/6 in second.",
+      color: "from-orange-500 to-red-500",
     },
     {
       icon: <Shield className="w-6 h-6 sm:w-8 sm:h-8" />,
       title: "QR Immunity",
-      description: "Hunt QR codes across campus for 10-minute elimination immunity!",
-      color: "from-green-500 to-cyan-500"
+      description:
+        "Hunt QR codes across campus for 10-minute elimination immunity!",
+      color: "from-green-500 to-cyan-500",
     },
     {
       icon: <Trophy className="w-6 h-6 sm:w-8 sm:h-8" />,
       title: "Epic Prizes",
       description: "Certificates, medals, and glory await the champions!",
-      color: "from-yellow-500 to-orange-500"
+      color: "from-yellow-500 to-orange-500",
     },
     {
       icon: <Gift className="w-6 h-6 sm:w-8 sm:h-8" />,
       title: "Free Refreshments",
       description: "Cookies and refreshments to fuel your coding marathon!",
-      color: "from-pink-500 to-purple-500"
-    }
+      color: "from-pink-500 to-purple-500",
+    },
   ];
 
   const stats = [
     { value: "3", label: "Hours", icon: "⏱️" },
     { value: "2-3", label: "Team Size", icon: "👥" },
     { value: "∞", label: "Challenges", icon: "🎯" },
-    { value: "1", label: "Winner", icon: "🏆" }
+    { value: "1", label: "Winner", icon: "🏆" },
   ];
 
   return (
@@ -78,7 +90,7 @@ const Home = () => {
           className="hidden md:block absolute top-32 left-10 text-4xl lg:text-6xl"
           animate={{
             y: [0, -20, 0],
-            rotate: [0, 10, -10, 0]
+            rotate: [0, 10, -10, 0],
           }}
           transition={{ duration: 4, repeat: Infinity }}
         >
@@ -88,7 +100,7 @@ const Home = () => {
           className="hidden md:block absolute top-40 right-20 text-4xl lg:text-6xl"
           animate={{
             y: [0, 20, 0],
-            rotate: [0, -10, 10, 0]
+            rotate: [0, -10, 10, 0],
           }}
           transition={{ duration: 3, repeat: Infinity, delay: 0.5 }}
         >
@@ -98,7 +110,7 @@ const Home = () => {
           className="hidden md:block absolute bottom-40 left-20 text-4xl lg:text-6xl"
           animate={{
             y: [0, -15, 0],
-            scale: [1, 1.1, 1]
+            scale: [1, 1.1, 1],
           }}
           transition={{ duration: 3.5, repeat: Infinity, delay: 1 }}
         >
@@ -108,7 +120,7 @@ const Home = () => {
           className="hidden md:block absolute bottom-32 right-10 text-4xl lg:text-6xl"
           animate={{
             y: [0, 15, 0],
-            x: [0, 10, 0]
+            x: [0, 10, 0],
           }}
           transition={{ duration: 4, repeat: Infinity, delay: 0.3 }}
         >
@@ -127,7 +139,9 @@ const Home = () => {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 sm:h-3 sm:w-3 bg-orange-500" />
             </span>
-            <span className="text-orange-400 text-xs sm:text-sm font-medium">IKGPTU Presents</span>
+            <span className="text-orange-400 text-xs sm:text-sm font-medium">
+              IKGPTU Presents
+            </span>
           </motion.div>
 
           {/* Main Title */}
@@ -145,13 +159,27 @@ const Home = () => {
             >
               <svg viewBox="0 0 200 200" className="w-full h-full">
                 <defs>
-                  <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <linearGradient
+                    id="ringGrad"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="100%"
+                  >
                     <stop offset="0%" stopColor="#ff6b35" />
                     <stop offset="50%" stopColor="#f7c435" />
                     <stop offset="100%" stopColor="#00ff88" />
                   </linearGradient>
                 </defs>
-                <circle cx="100" cy="100" r="95" fill="none" stroke="url(#ringGrad)" strokeWidth="2" strokeDasharray="10 5" />
+                <circle
+                  cx="100"
+                  cy="100"
+                  r="95"
+                  fill="none"
+                  stroke="url(#ringGrad)"
+                  strokeWidth="2"
+                  strokeDasharray="10 5"
+                />
               </svg>
             </motion.div>
 
@@ -159,10 +187,10 @@ const Home = () => {
               <motion.span
                 className="block bg-linear-to-r from-orange-500 via-yellow-400 to-green-500 bg-clip-text text-transparent"
                 animate={{
-                  backgroundPosition: ['0% 50%', '100% 50%', '0% 50%']
+                  backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
                 }}
                 transition={{ duration: 5, repeat: Infinity }}
-                style={{ backgroundSize: '200% 200%' }}
+                style={{ backgroundSize: "200% 200%" }}
               >
                 LOGIC
               </motion.span>
@@ -208,15 +236,21 @@ const Home = () => {
           >
             <div className="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-1.5 sm:py-2 bg-white/5 rounded-full border border-white/10">
               <Clock className="w-3 h-3 sm:w-4 sm:h-4 text-orange-400 shrink-0" />
-              <span className="text-xs sm:text-sm whitespace-nowrap">9th March 2026</span>
+              <span className="text-xs sm:text-sm whitespace-nowrap">
+                9th March 2026
+              </span>
             </div>
             <div className="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-1.5 sm:py-2 bg-white/5 rounded-full border border-white/10">
               <MapPin className="w-3 h-3 sm:w-4 sm:h-4 text-orange-400 shrink-0" />
-              <span className="text-xs sm:text-sm whitespace-nowrap">IKGPTU CC Lab</span>
+              <span className="text-xs sm:text-sm whitespace-nowrap">
+                IKGPTU CC Lab
+              </span>
             </div>
             <div className="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-1.5 sm:py-2 bg-white/5 rounded-full border border-white/10">
               <Users className="w-3 h-3 sm:w-4 sm:h-4 text-orange-400 shrink-0" />
-              <span className="text-xs sm:text-sm whitespace-nowrap">Teams of 2-3</span>
+              <span className="text-xs sm:text-sm whitespace-nowrap">
+                Teams of 2-3
+              </span>
             </div>
           </motion.div>
 
@@ -239,7 +273,7 @@ const Home = () => {
                 </span>
                 <motion.div
                   className="absolute inset-0 bg-linear-to-r from-yellow-500 to-orange-500"
-                  initial={{ x: '100%' }}
+                  initial={{ x: "100%" }}
                   whileHover={{ x: 0 }}
                   transition={{ duration: 0.3 }}
                 />
@@ -291,10 +325,10 @@ const Home = () => {
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 max-w-3xl mx-auto">
             {[
-              { value: timeLeft.days, label: 'Days' },
-              { value: timeLeft.hours, label: 'Hours' },
-              { value: timeLeft.minutes, label: 'Minutes' },
-              { value: timeLeft.seconds, label: 'Seconds' }
+              { value: timeLeft.days, label: "Days" },
+              { value: timeLeft.hours, label: "Hours" },
+              { value: timeLeft.minutes, label: "Minutes" },
+              { value: timeLeft.seconds, label: "Seconds" },
             ].map((item, index) => (
               <motion.div
                 key={item.label}
@@ -312,9 +346,11 @@ const Home = () => {
                     initial={{ scale: 1.2 }}
                     animate={{ scale: 1 }}
                   >
-                    {item.value.toString().padStart(2, '0')}
+                    {item.value.toString().padStart(2, "0")}
                   </motion.span>
-                  <span className="text-gray-400 text-xs sm:text-sm uppercase tracking-wider">{item.label}</span>
+                  <span className="text-gray-400 text-xs sm:text-sm uppercase tracking-wider">
+                    {item.label}
+                  </span>
                 </div>
               </motion.div>
             ))}
@@ -331,12 +367,16 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-8 sm:mb-16"
           >
-            <span className="text-orange-400 font-medium mb-2 block text-sm sm:text-base">What Makes Us Special</span>
+            <span className="text-orange-400 font-medium mb-2 block text-sm sm:text-base">
+              What Makes Us Special
+            </span>
             <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-2 sm:mb-4">
-              Not Your Average <span className="text-orange-400">Hackathon</span>
+              Not Your Average{" "}
+              <span className="text-orange-400">Hackathon</span>
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto text-sm sm:text-base px-2">
-              Experience the thrill of coding under pressure with unique survival elements!
+              Experience the thrill of coding under pressure with unique
+              survival elements!
             </p>
           </motion.div>
 
@@ -350,13 +390,21 @@ const Home = () => {
                 transition={{ delay: index * 0.1 }}
                 className="group relative"
               >
-                <div className={`absolute -inset-0.5 sm:-inset-1 bg-linear-to-r ${feature.color} rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-30 blur-xl transition-opacity duration-500`} />
+                <div
+                  className={`absolute -inset-0.5 sm:-inset-1 bg-linear-to-r ${feature.color} rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-30 blur-xl transition-opacity duration-500`}
+                />
                 <div className="relative h-full bg-linear-to-b from-white/5 to-transparent backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-white/10 hover:border-orange-500/30 transition-colors">
-                  <div className={`w-10 h-10 sm:w-14 sm:h-14 rounded-lg sm:rounded-xl bg-linear-to-r ${feature.color} flex items-center justify-center mb-3 sm:mb-4 text-white`}>
+                  <div
+                    className={`w-10 h-10 sm:w-14 sm:h-14 rounded-lg sm:rounded-xl bg-linear-to-r ${feature.color} flex items-center justify-center mb-3 sm:mb-4 text-white`}
+                  >
                     {feature.icon}
                   </div>
-                  <h3 className="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2">{feature.title}</h3>
-                  <p className="text-gray-400 text-xs sm:text-sm">{feature.description}</p>
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-400 text-xs sm:text-sm">
+                    {feature.description}
+                  </p>
                 </div>
               </motion.div>
             ))}
@@ -381,9 +429,15 @@ const Home = () => {
                   transition={{ delay: index * 0.1, type: "spring" }}
                   className="text-center"
                 >
-                  <span className="text-2xl sm:text-4xl mb-1 sm:mb-2 block">{stat.icon}</span>
-                  <span className="text-3xl sm:text-5xl md:text-6xl font-black text-white block">{stat.value}</span>
-                  <span className="text-gray-400 text-xs sm:text-base">{stat.label}</span>
+                  <span className="text-2xl sm:text-4xl mb-1 sm:mb-2 block">
+                    {stat.icon}
+                  </span>
+                  <span className="text-3xl sm:text-5xl md:text-6xl font-black text-white block">
+                    {stat.value}
+                  </span>
+                  <span className="text-gray-400 text-xs sm:text-base">
+                    {stat.label}
+                  </span>
                 </motion.div>
               ))}
             </div>
@@ -402,13 +456,15 @@ const Home = () => {
               viewport={{ once: true }}
               className="order-2 lg:order-1"
             >
-              <span className="text-orange-400 font-medium mb-2 block text-sm sm:text-base">Survival Element</span>
+              <span className="text-orange-400 font-medium mb-2 block text-sm sm:text-base">
+                Survival Element
+              </span>
               <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6">
                 Face <span className="text-red-500">"The Prop"</span>
               </h2>
               <p className="text-gray-400 mb-5 sm:mb-8 text-sm sm:text-lg">
-                Every 15 minutes, 1-2 teams will be randomly selected to face elimination.
-                Your team leader must choose who takes the risk!
+                Every 15 minutes, 1-2 teams will be randomly selected to face
+                elimination. Your team leader must choose who takes the risk!
               </p>
 
               <div className="space-y-3 sm:space-y-4">
@@ -417,8 +473,12 @@ const Home = () => {
                     <span className="text-xl sm:text-2xl">⚡</span>
                   </div>
                   <div className="min-w-0">
-                    <p className="font-bold text-white text-sm sm:text-base">First Half (0-90 mins)</p>
-                    <p className="text-gray-400 text-xs sm:text-sm">1/6 chance of elimination</p>
+                    <p className="font-bold text-white text-sm sm:text-base">
+                      First Half (0-90 mins)
+                    </p>
+                    <p className="text-gray-400 text-xs sm:text-sm">
+                      1/6 chance of elimination
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-white/5 rounded-lg sm:rounded-xl border border-red-500/30">
@@ -426,8 +486,12 @@ const Home = () => {
                     <span className="text-xl sm:text-2xl">🔥</span>
                   </div>
                   <div className="min-w-0">
-                    <p className="font-bold text-white text-sm sm:text-base">Second Half (90-180 mins)</p>
-                    <p className="text-red-400 text-xs sm:text-sm">2/6 chance of elimination</p>
+                    <p className="font-bold text-white text-sm sm:text-base">
+                      Second Half (90-180 mins)
+                    </p>
+                    <p className="text-red-400 text-xs sm:text-sm">
+                      2/6 chance of elimination
+                    </p>
                   </div>
                 </div>
               </div>
@@ -450,7 +514,7 @@ const Home = () => {
                   transition={{
                     duration: 10,
                     repeat: Infinity,
-                    ease: "linear"
+                    ease: "linear",
                   }}
                 >
                   <div className="w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 bg-linear-to-br from-red-500 to-orange-500 rounded-xl sm:rounded-2xl shadow-2xl shadow-red-500/50 flex items-center justify-center">
@@ -464,26 +528,28 @@ const Home = () => {
                     key={i}
                     className="absolute w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-white/10 flex items-center justify-center"
                     style={{
-                      top: '50%',
-                      left: '50%'
+                      top: "50%",
+                      left: "50%",
                     }}
                     animate={{
                       x: [
                         Math.cos((i * Math.PI) / 3) * 70,
-                        Math.cos(((i + 6) * Math.PI) / 3) * 70
+                        Math.cos(((i + 6) * Math.PI) / 3) * 70,
                       ],
                       y: [
                         Math.sin((i * Math.PI) / 3) * 70,
-                        Math.sin(((i + 6) * Math.PI) / 3) * 70
-                      ]
+                        Math.sin(((i + 6) * Math.PI) / 3) * 70,
+                      ],
                     }}
                     transition={{
                       duration: 6,
                       repeat: Infinity,
-                      ease: "linear"
+                      ease: "linear",
                     }}
                   >
-                    <span className="text-sm sm:text-lg md:text-2xl">{i + 1}</span>
+                    <span className="text-sm sm:text-lg md:text-2xl">
+                      {i + 1}
+                    </span>
                   </motion.div>
                 ))}
               </div>
@@ -503,12 +569,15 @@ const Home = () => {
           >
             <div className="absolute -inset-2 sm:-inset-4 bg-linear-to-r from-orange-500/20 via-yellow-500/20 to-green-500/20 rounded-2xl sm:rounded-3xl blur-xl" />
             <div className="relative bg-accent/80 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-6 sm:p-10 md:p-12 border border-orange-500/20">
-              <span className="text-4xl sm:text-5xl md:text-6xl mb-3 sm:mb-4 block">🚀</span>
+              <span className="text-4xl sm:text-5xl md:text-6xl mb-3 sm:mb-4 block">
+                🚀
+              </span>
               <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-2 sm:mb-4">
                 Ready to <span className="text-orange-400">Dominate?</span>
               </h2>
               <p className="text-gray-400 mb-5 sm:mb-8 text-sm sm:text-lg max-w-xl mx-auto">
-                Form your team, sharpen your skills, and get ready for the ultimate coding battle!
+                Form your team, sharpen your skills, and get ready for the
+                ultimate coding battle!
               </p>
               <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4">
                 <Link to="/register" className="w-full sm:w-auto">
@@ -520,7 +589,12 @@ const Home = () => {
                     Register Your Team 🎯
                   </motion.button>
                 </Link>
-                <a href="https://unstop.com/o/PQqMOZk" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+                <a
+                  href="https://unstop.com/o/PQqMOZk"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto"
+                >
                   <motion.button
                     className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 border-2 border-orange-500/30 rounded-full font-bold text-white text-base sm:text-lg hover:bg-orange-500/10 transition-colors"
                     whileHover={{ scale: 1.05 }}
@@ -534,8 +608,6 @@ const Home = () => {
           </motion.div>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 };

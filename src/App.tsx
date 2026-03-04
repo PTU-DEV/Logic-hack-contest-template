@@ -1,15 +1,16 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import About from './pages/About';
-import Rules from './pages/Rules';
-import Register from './pages/Register';
-import Timeline from './pages/Timeline';
-import Contact from './pages/Contact';
-import Fun from './pages/Fun';
-import QRHunt from './pages/QRHunt';
-import Loader from './components/Loader';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useState, useEffect } from "react";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Rules from "./pages/Rules";
+import Register from "./pages/Register";
+import Timeline from "./pages/Timeline";
+import Contact from "./pages/Contact";
+import Fun from "./pages/Fun";
+import QRHunt from "./pages/QRHunt";
+import Loader from "./components/Loader";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -42,6 +43,8 @@ function App() {
             <Route path="/qr-hunt" element={<QRHunt />} />
           </Routes>
         </main>
+
+        <Footer />
       </div>
     </Router>
   );
